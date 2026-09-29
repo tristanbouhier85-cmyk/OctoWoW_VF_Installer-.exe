@@ -2,6 +2,8 @@
 
 Application WinForms autonome pour installer les textes et voix françaises de WoW 1.12.1.
 
+OctoWoW VF traduit le contenu de base de WoW 1.12.1 et ajoute les voix françaises. Un seul EXE autonome installe, sauvegarde et désinstalle la VF. Compatible avec le launcher. Les ajouts propres à OctoWoW peuvent rester en anglais. Projet communautaire non officiel.
+
 ## Publication
 
 ```text
