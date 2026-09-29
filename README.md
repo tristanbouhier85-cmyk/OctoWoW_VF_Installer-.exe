@@ -2,7 +2,7 @@
 
 Ce depot contient uniquement les fichiers necessaires pour mettre OctoWoW en francais.
 
-## Fichiers a telecharger
+## A telecharger
 
 Telechargez ces deux fichiers :
 
@@ -11,45 +11,81 @@ patch-6.mpq
 speech.MPQ
 ```
 
-## Installation
+## Installation simple
 
-Fermez completement OctoWoW, le launcher et `WoW.exe`.
+### 1. Fermer le jeu
 
-Ouvrez le dossier de votre jeu OctoWoW, par exemple :
-
-```text
-D:\OctoWoW
-```
-
-Ouvrez ensuite le dossier :
+Fermez completement :
 
 ```text
-D:\OctoWoW\Data
+OctoWoW
+le launcher
+WoW.exe
 ```
 
-Copiez `patch-6.mpq` dans `Data` :
+### 2. Copier les textes francais
+
+Copiez :
+
+```text
+patch-6.mpq
+```
+
+dans :
 
 ```text
 D:\OctoWoW\Data\patch-6.mpq
 ```
 
-Copiez `speech.MPQ` dans `Data`, puis renommez la copie en :
+### 3. Copier les voix francaises
+
+Copiez :
+
+```text
+speech.MPQ
+```
+
+dans :
+
+```text
+D:\OctoWoW\Data
+```
+
+Puis renommez cette copie en :
+
+```text
+patch-7.mpq
+```
+
+Le resultat doit etre :
 
 ```text
 D:\OctoWoW\Data\patch-7.mpq
 ```
 
-Important : ne remplacez pas `Data\speech.MPQ`. Le fichier des voix francaises doit s'appeler `patch-7.mpq`.
+Important : ne remplacez pas `D:\OctoWoW\Data\speech.MPQ`. Les voix francaises doivent etre installees sous le nom `patch-7.mpq`.
 
-## Activer le francais
+### 4. Activer la langue francaise dans Config.wtf
 
-Ouvrez le fichier :
+Ouvrez ce fichier avec le Bloc-notes :
 
 ```text
 D:\OctoWoW\WTF\Config.wtf
 ```
 
-Ajoutez ou remplacez la ligne `locale` par :
+Cherchez une ligne qui commence par :
+
+```text
+SET locale
+```
+
+Remplacez-la par :
+
+```text
+SET locale "frFR"
+```
+
+Si la ligne n'existe pas, ajoutez simplement cette ligne a la fin du fichier :
 
 ```text
 SET locale "frFR"
@@ -57,9 +93,11 @@ SET locale "frFR"
 
 Enregistrez le fichier.
 
-## Cache
+Cette etape est obligatoire : sans `SET locale "frFR"`, le jeu peut continuer a utiliser la langue anglaise.
 
-Si le jeu garde encore des textes en anglais, fermez le jeu puis renommez le dossier :
+### 5. Reinitialiser le cache si besoin
+
+Si des textes restent en anglais, fermez le jeu puis renommez :
 
 ```text
 D:\OctoWoW\WDB
@@ -71,7 +109,7 @@ en :
 WDB_sauvegarde
 ```
 
-Ne supprimez pas le dossier : renommez-le seulement pour pouvoir le restaurer si besoin.
+Ne supprimez pas le dossier `WDB`. Renommez-le seulement.
 
 ## Resume rapide
 
@@ -83,7 +121,9 @@ Config.wtf  -> SET locale "frFR"
 
 ## Desinstallation
 
-Fermez le jeu, puis supprimez uniquement ces deux fichiers :
+Fermez le jeu.
+
+Supprimez uniquement :
 
 ```text
 D:\OctoWoW\Data\patch-6.mpq
