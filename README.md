@@ -33,26 +33,3 @@ SET locale "frFR"
 ```
 
 Lancez le jeu.
-
-## Si des textes restent en anglais
-
-Fermez le jeu, puis renommez :
-
-```text
-D:\OctoWoW\WDB
-```
-
-en :
-
-```text
-WDB_sauvegarde
-```
-
-## Desinstallation
-
-Supprimez uniquement :
-
-```text
-D:\OctoWoW\Data\patch-6.mpq
-D:\OctoWoW\Data\patch-7.mpq
-```
