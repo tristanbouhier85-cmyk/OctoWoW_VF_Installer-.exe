@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <AssemblyName>OctoWoW_VF_Installer</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <EnableDefaultApplicationIcon>false</EnableDefaultApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\octowow-vf-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Include="assets\patch-6.mpq" LogicalName="OctoWoW_VF_Installer.assets.patch-6.mpq" />
+    <EmbeddedResource Include="assets\speech.MPQ" LogicalName="OctoWoW_VF_Installer.assets.speech.MPQ" />
+    <EmbeddedResource Include="Resources\octowow-vf-icon.ico" LogicalName="OctoWoW_VF_Installer.Resources.octowow-vf-icon.ico" />
+  </ItemGroup>
+</Project>
