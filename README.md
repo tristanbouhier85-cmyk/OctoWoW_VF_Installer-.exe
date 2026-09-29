@@ -1,25 +1,95 @@
-# OctoWoW VF Installer
+# OctoWoW VF - installation manuelle
 
-Application WinForms autonome pour installer les textes et voix françaises de WoW 1.12.1.
+Ce depot contient uniquement les fichiers necessaires pour mettre OctoWoW en francais.
 
-OctoWoW VF traduit le contenu de base de WoW 1.12.1 et ajoute les voix françaises. Un seul EXE autonome installe, sauvegarde et désinstalle la VF. Compatible avec le launcher. Les ajouts propres à OctoWoW peuvent rester en anglais. Projet communautaire non officiel.
+## Fichiers a telecharger
 
-## Publication
-
-```text
-dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
-```
-
-Le fichier publié est `bin/Release/net8.0-windows/win-x64/publish/OctoWoW_VF_Installer.exe`.
-Les MPQ sont des ressources embarquées : aucun téléchargement ni client français n’est requis sur le poste final. Le binaire sera volumineux, car `speech.MPQ` fait environ 434 Mo.
-
-Ressources incluses dans cette version :
+Telechargez ces deux fichiers :
 
 ```text
-assets/patch-6.mpq  6 957 214 octets  SHA-256 686306BC0FDEB73CDD93B151F5050832396A72E3142FFF8CA3BEEC72E64115EA
-assets/speech.MPQ 433 759 641 octets SHA-256 6792409A5AA32D192C97EDF9EC15AB26F6397293B350920A0FA80900A4B86331
+patch-6.mpq
+speech.MPQ
 ```
 
-L’application crée des sauvegardes horodatées, un fichier `OctoWoW_VF_installation.json` et le journal `OctoWoW_VF_installation.log` dans le client.
+## Installation
 
-Avant diffusion, tester l’installation et la désinstallation sur une copie du client, puis générer un hash SHA-256 du binaire publié.
+Fermez completement OctoWoW, le launcher et `WoW.exe`.
+
+Ouvrez le dossier de votre jeu OctoWoW, par exemple :
+
+```text
+D:\OctoWoW
+```
+
+Ouvrez ensuite le dossier :
+
+```text
+D:\OctoWoW\Data
+```
+
+Copiez `patch-6.mpq` dans `Data` :
+
+```text
+D:\OctoWoW\Data\patch-6.mpq
+```
+
+Copiez `speech.MPQ` dans `Data`, puis renommez la copie en :
+
+```text
+D:\OctoWoW\Data\patch-7.mpq
+```
+
+Important : ne remplacez pas `Data\speech.MPQ`. Le fichier des voix francaises doit s'appeler `patch-7.mpq`.
+
+## Activer le francais
+
+Ouvrez le fichier :
+
+```text
+D:\OctoWoW\WTF\Config.wtf
+```
+
+Ajoutez ou remplacez la ligne `locale` par :
+
+```text
+SET locale "frFR"
+```
+
+Enregistrez le fichier.
+
+## Cache
+
+Si le jeu garde encore des textes en anglais, fermez le jeu puis renommez le dossier :
+
+```text
+D:\OctoWoW\WDB
+```
+
+en :
+
+```text
+WDB_sauvegarde
+```
+
+Ne supprimez pas le dossier : renommez-le seulement pour pouvoir le restaurer si besoin.
+
+## Resume rapide
+
+```text
+patch-6.mpq -> D:\OctoWoW\Data\patch-6.mpq
+speech.MPQ  -> D:\OctoWoW\Data\patch-7.mpq
+Config.wtf  -> SET locale "frFR"
+```
+
+## Desinstallation
+
+Fermez le jeu, puis supprimez uniquement ces deux fichiers :
+
+```text
+D:\OctoWoW\Data\patch-6.mpq
+D:\OctoWoW\Data\patch-7.mpq
+```
+
+Si vous avez renomme `WDB`, vous pouvez remettre l'ancien dossier a son nom d'origine.
+
+Ne supprimez pas les autres fichiers `patch-*.mpq` d'OctoWoW.
