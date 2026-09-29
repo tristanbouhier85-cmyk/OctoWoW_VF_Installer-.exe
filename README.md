@@ -33,3 +33,9 @@ SET locale "frFR"
 ```
 
 Lancez le jeu.
+
+Si du contenu reste en anglais, fermez le jeu puis supprimez le dossier :
+
+```text
+D:\OctoWoW\WDB
+```
